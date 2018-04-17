@@ -9,11 +9,11 @@
 import UIKit
 
 struct GitHub {
-    var name: String?
-    var description: String?
-    var created_at: String?
-    var owner: String?
-    var license: String?
+    var name: String!
+    var description: String!
+    var created_at: String!
+    var owner: String!
+    var license: String!
 }
 
 class ViewController: UIViewController, UICollectionViewDataSource {
@@ -63,8 +63,17 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             
         gitHub  = self.dataLayer.itemForIndex(index: indexPath.row)
         
-        let namel: UILabel = cell?.viewWithTag(1) as! UILabel
-        namel.text = gitHub.name
+        let name: UILabel = cell?.viewWithTag(1) as! UILabel
+        name.text = "name:" + gitHub.name
+        
+        let desc: UILabel = cell?.viewWithTag(2) as! UILabel
+        desc.text = "Description:" + gitHub.description
+        
+        let created: UILabel = cell?.viewWithTag(3) as! UILabel
+        created.text = "Created_At:" + gitHub.created_at
+        
+        let lic: UILabel = cell?.viewWithTag(4) as! UILabel
+        lic.text = "License:" + gitHub.license
         
         return cell!
     }

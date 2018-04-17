@@ -21,9 +21,6 @@ class ListLayout: UICollectionViewFlowLayout {
         setupLayout()
     }
     
-    /**
-     Sets up the layout for the collectionView. 0 distance between each cell, and vertical layout
-     */
     func setupLayout() {
         minimumInteritemSpacing = 0
         minimumLineSpacing = 1

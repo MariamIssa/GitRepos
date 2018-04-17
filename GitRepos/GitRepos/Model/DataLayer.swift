@@ -43,8 +43,13 @@ class DataLayer: NSObject {
         var gitHub : GitHub = GitHub()
         
         if let dict: [String: Any] = self.arrayData[index] as? [String: Any] {
-            gitHub.name = dict["name"] as? String
-            gitHub.description = dict["description"] as? String
+            gitHub.name = dict["name"] as? String ?? "null"
+            gitHub.description = dict["description"] as? String ?? "null"
+            gitHub.created_at = dict["created_at"] as? String ?? "null"
+            
+            if let dict1 : [String: Any] = self.arrayData[index] as? [String: Any] {
+                gitHub.license = dict1["license"] as? String ?? "null"
+            }
         }
         
         return gitHub
